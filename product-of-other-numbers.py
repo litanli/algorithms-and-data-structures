@@ -85,3 +85,10 @@ list3 = [0, 0, 0] # zeroes
 list4 = [-1, -1, -1] # negatives
 res3 = products(list3)
 res4 = products(list4)
+
+# What I Learned
+# The construction of the return list involved calculations that were repeated. 
+# This key observation allowed us to use a calculate, store, and reuse approach
+# that reduced our time complexity from O(n^2) to O(n).
+# We spotted an opportunity to save space by eliminating uneccessary 
+# intermediate lists. 
