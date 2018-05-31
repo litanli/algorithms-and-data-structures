@@ -9,11 +9,12 @@
 #      reverse_words(message) 
 #      print(''.join(message)) # prints 'do your laundry' 
 
-# The trick here is to first reverse all the characters. If you do that,
-# you'll get ['o', 'd', ' ', 'r', 'u', 'o', 'y', ' ',
-#              'y', 'r', 'd', 'n', 'u', 'a', 'l']
+# The trick here is to first reverse all the characters to get
+# ['o', 'd', ' ', 'r', 'u', 'o', 'y', ' ',
+#  'y', 'r', 'd', 'n', 'u', 'a', 'l']
+
 # That is, you get the words in order, but each word is reversed.
-# We then just need to reverse each word.
+# Then we just need to reverse each word.
 
 def reverse_characters(list_of_characters, left_index, right_index):
     
@@ -32,9 +33,9 @@ def reverse_words(message):
     
     for i in range(len(message)+1):
         
-        # found end of current word. Note, we are lucky that Python uses short
-        # circuiting. If the first condition is true, the second is not
-        # evaluated. If it was, we would have an index error.
+        # Found end of current word. Note, we take advantage of the fact that
+        # Python uses short circuiting. If the first condition is true, the 
+        # second is not evaluated, which would give an index out-of-bound error
         if i == len(message) or message[i] == ' ':
     
             reverse_characters(message, current_word_start_index, i - 1)
@@ -51,5 +52,3 @@ print(''.join(message))
 # We tried solving a simpler problem first, namely reversing the characters of
 # the whole message, and we found that it did half the work towards solving the
 # problem.
-    
-
